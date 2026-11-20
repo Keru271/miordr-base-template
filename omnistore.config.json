@@ -1,0 +1,19 @@
+{
+  "$schema": "https://omnistore.app/schemas/storefront-config/v1",
+  "baseVersion": "1.0.0",
+  "storeId": "{{STORE_ID}}",
+  "storeSlug": "{{STORE_SLUG}}",
+  "activeTheme": "base",
+  "miordrTemplate": null,
+  "miordrTemplateVersion": null,
+  "customSections": [],
+  "featureFlags": {
+    "aiEditor": true,
+    "sectionEditor": true,
+    "customDomain": false,
+    "demoContent": false
+  },
+  "platformPatches": [],
+  "lastPatchAppliedAt": null,
+  "lastPatchVersion": null
+}

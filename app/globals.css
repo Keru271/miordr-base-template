@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+:root {
+  --sf-primary:        #18181b;
+  --sf-primary-hover:  #27272a;
+  --sf-secondary:      #71717a;
+  --sf-accent:         #3b82f6;
+  --sf-accent-hover:   #2563eb;
+  --sf-bg:             #ffffff;
+  --sf-surface:        #f4f4f5;
+  --sf-surface-alt:    #e4e4e7;
+  --sf-overlay:        rgba(0,0,0,0.5);
+  --sf-text:           #18181b;
+  --sf-text-muted:     #71717a;
+  --sf-text-inverse:   #ffffff;
+  --sf-border:         #e4e4e7;
+  --sf-border-strong:  #a1a1aa;
+  --sf-success:        #22c55e;
+  --sf-error:          #ef4444;
+  --sf-warning:        #f59e0b;
+  --sf-info:           #3b82f6;
+  --sf-heading-font:   'Inter', system-ui, sans-serif;
+  --sf-body-font:      'Inter', system-ui, sans-serif;
+  --sf-mono-font:      monospace;
+  --sf-radius:         0.5rem;
+  --sf-radius-lg:      0.75rem;
+  --sf-radius-xl:      1rem;
+  --sf-radius-full:    9999px;
+  --sf-shadow:         0 1px 3px rgba(0,0,0,0.1);
+  --sf-shadow-lg:      0 10px 15px rgba(0,0,0,0.1);
+  --sf-container-max:  80rem;
+  --sf-nav-height:     4rem;
+}
+
+/* [MIORDR_TOKEN_OVERRIDE_ANCHOR] */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sf-body-font);
+  background-color: var(--sf-bg);
+  color: var(--sf-text);
+  -webkit-font-smoothing: antialiased;
+}
+h1,h2,h3,h4,h5,h6 { font-family: var(--sf-heading-font); font-weight: 700; line-height: 1.2; }
+a { color: inherit; text-decoration: none; }
+img,video { max-width: 100%; height: auto; }
+
+.sf-container {
+  max-width: var(--sf-container-max);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 640px) { .sf-container { padding-inline: 1.5rem; } }
+@media (min-width: 1024px) { .sf-container { padding-inline: 2rem; } }
+
+.sf-btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.75rem 1.5rem; background-color: var(--sf-primary); color: var(--sf-text-inverse);
+  border-radius: var(--sf-radius); font-weight: 600; font-size: 0.875rem;
+  transition: background-color 150ms ease; cursor: pointer; border: none;
+}
+.sf-btn-primary:hover { background-color: var(--sf-primary-hover); }
+
+.sf-btn-outline {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.75rem 1.5rem; background-color: transparent; color: var(--sf-primary);
+  border: 1px solid var(--sf-border-strong); border-radius: var(--sf-radius);
+  font-weight: 600; font-size: 0.875rem; transition: all 150ms ease; cursor: pointer;
+}
+.sf-btn-outline:hover { background-color: var(--sf-surface); }
