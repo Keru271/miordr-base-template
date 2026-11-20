@@ -7,11 +7,17 @@ import type { SectionConfig } from '@/lib/sections/types';
 import ThemeHeader from '@/components/theme/Header';
 import ThemeFooter from '@/components/theme/Footer';
 import DefaultHomeSections from '@/components/theme/DefaultHomeSections';
+import RunwaySection from '@/components/theme/runway/RunwaySection';
+import config from '@/omnistore.config.json';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 export default async function HomePage() {
+  const isRunway = config.activeTheme === 'runway' || process.env.NEXT_PUBLIC_THEME === 'runway';
+  if (isRunway) {
+    return <RunwaySection />;
+  }
   const [theme, products, collections, categories] = await Promise.all([
     getTheme(),
     getProducts({ limit: 16 }),

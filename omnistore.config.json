@@ -3,9 +3,9 @@
   "baseVersion": "1.0.0",
   "storeId": "{{STORE_ID}}",
   "storeSlug": "{{STORE_SLUG}}",
-  "activeTheme": "base",
-  "miordrTemplate": null,
-  "miordrTemplateVersion": null,
+  "activeTheme": "runway",
+  "miordrTemplate": "nike-runway",
+  "miordrTemplateVersion": "1.0.0",
   "customSections": [],
   "featureFlags": {
     "aiEditor": true,

@@ -36,6 +36,7 @@ export interface ThemeConfig {
   snapchatPixelId?: string | null;
   customCss?: string | null;
   customJs?: string | null;
+  reviewsEnabled?: boolean | null;
 }
 
 export interface Product {
@@ -72,10 +73,26 @@ export interface ProductVariant {
   images?: string[];
 }
 
+export interface ProductReview {
+  id: string;
+  userName: string;
+  userEmail?: string | null;
+  rating: number;
+  title?: string | null;
+  comment: string;
+  verified?: boolean;
+  status?: string;
+  adminReply?: string | null;
+  adminReplyAt?: string | null;
+  createdAt: string;
+}
+
 export interface ProductDetail extends Product {
   fullDescription?: string | null;
   specifications?: Record<string, string> | null;
   relatedProducts?: Product[];
+  reviews?: ProductReview[];
+  reviewsEnabled?: boolean;
 }
 
 export interface Category {

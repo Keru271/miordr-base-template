@@ -42,3 +42,29 @@ export async function getProductsByCollection(slug: string): Promise<Product[]> 
     return Array.isArray(res) ? res : res.data || [];
   } catch { return []; }
 }
+
+export async function submitProductReview(
+  productId: string,
+  data: {
+    userName: string;
+    userEmail?: string;
+    rating: number;
+    title?: string;
+    comment: string;
+  },
+): Promise<{ success: boolean; message: string }> {
+  const apiBase = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+  const res = await fetch(`${apiBase}/api/products/${productId}/reviews`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+
+  const body = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    throw new Error(body.message || `Failed to submit review: ${res.status}`);
+  }
+  return body;
+}
