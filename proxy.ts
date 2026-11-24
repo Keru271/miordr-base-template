@@ -5,7 +5,7 @@ import type { NextRequest } from 'next/server';
  * Next.js Edge Middleware — Multi-Tenant Store Resolution
  * SACRED: Never modify via AI Editor or CMS tools.
  */
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const host = request.headers.get('x-forwarded-host') || request.headers.get('host') || '';
   let cleanHost = host.split(':')[0].toLowerCase().trim();
 
